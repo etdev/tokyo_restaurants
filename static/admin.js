@@ -7,23 +7,28 @@ var baseUrl = 'http://trapi.etdev.me/v1/';
 tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
     // create an admin application
     var admin = nga.application('Tokyo Restaurants')
+      //.baseApiUrl('http://localhost:3000/v1/')
       .baseApiUrl('http://trapi.etdev.me/v1/');
 
     // create area entity, set fields
     var area = nga.entity('areas');
     area.listView().fields([
         nga.field('id'),
-        nga.field('name'),
-        nga.field('primary_code'),
-        nga.field('restaurants', 'embedded_list')
-           .targetFields([
-             nga.field('id')
-                .isDetailLink(true),
-             nga.field('name')
-                .template('<a href="{{entry.values.url}}">{{value}}</a>'),
-             nga.field('rating'),
-             nga.field('price_range')
-           ])
+        nga.field('name')
+    ]).batchActions([]);
+
+    // area editionView
+    area.showView().fields([
+      nga.field('id'),
+      nga.field('name'),
+      nga.field('restaurants', 'embedded_list')
+          .targetFields([
+            nga.field('name')
+              .template('<a href="{{entry.values.url}}">{{value}}</a>'),
+            nga.field('genres'),
+            nga.field('rating'),
+            nga.field('price_range'),
+          ])
     ]);
 
     // create the restaurant list view
@@ -35,11 +40,6 @@ tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
         nga.field('rating'),
         nga.field('price_range'),
         nga.field('genres')
-    ]);
-
-    restaurant.showView().fields([
-        nga.field('id'),
-        nga.field('name')
     ]);
 
     // add area entity
