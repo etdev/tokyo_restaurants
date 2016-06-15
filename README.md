@@ -13,7 +13,7 @@ npm install ng-admin --save
 Run server (defaults to port 4567)
 
 ```bash
-go run app.go
+go run server.go
 ```
 
 ### Dependencies
