@@ -3,12 +3,22 @@
 install:
 	@npm install
 
-build: copy-ng-admin
+build: copy-ng-admin copy-templates copy-images
 	@./node_modules/.bin/webpack  --progress --colors --devtool source-map
 
 copy-ng-admin:
 	@cp ./node_modules/ng-admin/build/ng-admin.min.js build/
 	@cp ./node_modules/ng-admin/build/ng-admin.min.js.map build/
+	@cp ./node_modules/ng-admin/build/ng-admin.min.css build/
+	@cp ./node_modules/ng-admin/build/ng-admin.min.css.map build/
+
+copy-templates:
+	mkdir ./build/templates
+	@cp ./templates/* ./build/templates/
+
+copy-images:
+	mkdir ./build/images
+	@cp ./images/* ./build/images/
 
 run: copy-ng-admin
 	@echo "**************************************************"
