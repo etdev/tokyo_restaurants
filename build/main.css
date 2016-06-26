@@ -34,7 +34,7 @@ html, body {
   .dashboard-main {
     padding: 15px;
     height: 190px;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)) url(./buildfcd72ef556890775a47f694921b34ab9.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(/build/images/dashboard_main.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%; }
