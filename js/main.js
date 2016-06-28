@@ -2,8 +2,12 @@
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['ng-admin']);
 var baseUrl = 'http://trapi.etdev.me/v1/';
 
+// custom directives
+tokyoRestaurants.directive('dashboardPicker', require('./dashboard/dashboardPicker'));
+
 // declare a function to run when the module bootstraps (during the 'config' phase)
 tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
+
     // create an admin application
     var admin = nga.application('Tokyo Restaurants')
       //.baseApiUrl('http://localhost:3000/v1/')

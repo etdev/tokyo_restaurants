@@ -20,7 +20,7 @@ copy-images:
 	mkdir -p ./build/images
 	@cp ./images/* ./build/images/
 
-run: copy-ng-admin
+run: copy-templates copy-images copy-ng-admin
 	@echo "**************************************************"
 	@echo "* open http://localhost:8080/webpack-dev-server/ *"
 	@echo "**************************************************"
