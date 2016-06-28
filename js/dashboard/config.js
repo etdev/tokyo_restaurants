@@ -6,9 +6,10 @@ return nga.dashboard()
     .addCollection(nga.collection(nga.entity('areas'))
         .name('areas')
         .title('Areas')
-        .perPage(10) // limit the panel to the 5 latest posts
+        .perPage(10) // limit to 10 latest
         .fields([
-            nga.field('name').isDetailLink(true)
+            nga.field('name')
+            .template('<a href="#/areas/show/{{entry.values.id}}">{{value}}</a>')
         ])
       );
 }

@@ -1,23 +1,18 @@
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html, body {
   width: 100%;
-  overflow-x: hidden;
-}
+  overflow-x: hidden; }
 
 @media (min-width: 701px) {
   .dashboard-main, .dashboard-link-picker {
-    display: none !important;
-  }
-}
+    display: none !important; } }
 
 .navbar-static-top {
   background: #292C34;
   color: #FFF;
-  border: none;
-}
+  border: none; }
 
 .navbar-static-top button.navbar-toggle,
 .navbar-static-top button.navbar-toggle:hover,
@@ -27,13 +22,11 @@ html, body {
   background: #292C34;
   margin-top: 8px;
   margin-left: 6px;
-  border: none;
-}
+  border: none; }
 
 .navbar-static-top button.navbar-toggle span.icon-bar {
   background-color: #FFF;
-  width: 18px;
-}
+  width: 18px; }
 
 .navbar-static-top .navbar-brand {
   color: #FFF;
@@ -41,51 +34,35 @@ html, body {
   position: absolute;
   left: 50%;
   width: 200px;
-  margin-left: -100px;
-}
+  margin-left: -100px; }
 
 .navbar-static-top .navbar-brand:hover {
   color: #CCC;
-  transition: color 0.5s ease-in-out;
-}
+  transition: color 0.5s ease-in-out; }
 
 @media (max-width: 700px) {
   .dashboard-main {
     padding: 15px;
     height: 190px;
-    background:
-      linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.55)
-      ),
-      url(../images/dashboard_main.jpg);
-
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(/build/images/dashboard_main.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-
+    background-position: 50% 50%; }
   .dashboard-main > h2 {
     color: white;
     margin-top: 50px;
     font-size: 1.8em;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
-    font-weight: 800;
-  }
-
+    font-weight: 800; }
   #page-wrapper {
-    padding: 0 !important;
-  }
-
+    padding: 0 !important; }
   .dashboard-link-picker ul {
     list-style: none;
     background: #F8F9F9;
     padding: 0;
     margin: 0;
-    display: block;
-  }
-
+    display: block; }
   .dashboard-link-picker ul li {
     color: #9A9EA2;
     display: inline-block;
@@ -96,22 +73,14 @@ html, body {
     line-height: 46px;
     padding: 0 10px;
     border-bottom: 2px solid #EEF1F5;
-    float: left;
-  }
-
+    float: left; }
   .dashboard-link-picker ul li.active {
     color: #434343;
-    border-bottom: 3px solid #47C3BF;
-  }
-
+    border-bottom: 3px solid #47C3BF; }
   .panel-heading {
-    display: none;
-  }
-
+    display: none; }
   .dashboard-content th {
-    display: none;
-  }
-
+    display: none; }
   .dashboard-content td {
     display: block;
     min-height: 50px;
@@ -119,42 +88,28 @@ html, body {
     background: #FFF !important;
     border-top: none !important;
     padding: 0 !important;
-    border-bottom: 1px solid #EEF1F5;
-  }
-
+    border-bottom: 1px solid #EEF1F5; }
   .dashboard-content tr {
-    border: none;
-  }
-
+    border: none; }
   .dashboard-content td a {
-    &:hover, &:active {
-      background: darken(#FFF, 3%);
-      text-decoration: none;
-    }
     line-height: 50px;
     display: block;
     height: 50px;
     color: #434343;
     font-weight: bold;
-    padding-left: 15px;
-  }
-
-  // header
+    padding-left: 15px; }
+    .dashboard-content td a:hover, .dashboard-content td a:active {
+      background: #f7f7f7;
+      text-decoration: none; }
   #header-nav {
-    margin-bottom: -1px !important;
-  }
-
+    margin-bottom: -1px !important; }
   ul#side-menu li {
-    background: lighten(#292C34, 8%);
-    border-bottom: 1px solid lighten(#292C34, 4%);
-    border-top: 1px solid lighten(#292C34, 4%);
-    a {
-      color: #fff !important;
-      &:hover, &:active, &:focus, &:visited {
-        background: lighten(#292C34, 6%);
-      }
-    }
-  }
+    background: #3b3f4b;
+    border-bottom: 1px solid #32363f;
+    border-top: 1px solid #32363f; }
+    ul#side-menu li a {
+      color: #fff !important; }
+      ul#side-menu li a:hover, ul#side-menu li a:active, ul#side-menu li a:focus, ul#side-menu li a:visited {
+        background: #363a45; } }
 
-
-}
+/*# sourceMappingURL=main.css.map*/

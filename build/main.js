@@ -1,0 +1,200 @@
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/build/";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(1);
+	module.exports = __webpack_require__(7);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// declare a new module called 'tokyoRestaurants', and make it require the `ng-admin` module as a dependency
+	'use strict';
+	
+	var tokyoRestaurants = angular.module('tokyoRestaurants', ['ng-admin']);
+	var baseUrl = 'http://trapi.etdev.me/v1/';
+	
+	// custom directives
+	tokyoRestaurants.directive('dashboardPicker', __webpack_require__(2));
+	
+	// declare a function to run when the module bootstraps (during the 'config' phase)
+	tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
+	
+	  // create an admin application
+	  var admin = nga.application('Tokyo Restaurants')
+	  //.baseApiUrl('http://localhost:3000/v1/')
+	  .baseApiUrl('http://trapi.etdev.me/v1/').header(__webpack_require__(4)(nga, admin));
+	
+	  // create area entity, set fields
+	  var area = nga.entity('areas');
+	  area.listView().fields([nga.field('id'), nga.field('name')]).batchActions([]);
+	
+	  // area editionView
+	  area.showView().fields([nga.field('id'), nga.field('name'), nga.field('restaurants', 'embedded_list').targetFields([nga.field('name').template('<a href="{{entry.values.url}}">{{value}}</a>'), nga.field('genres'), nga.field('rating'), nga.field('price_range')])]);
+	
+	  // create the restaurant list view
+	  var restaurant = nga.entity('restaurants');
+	
+	  restaurant.listView().fields([nga.field('name').template('<a href="{{entry.values.url}}">{{value}}</a>'), nga.field('rating'), nga.field('price_range'), nga.field('genres')]);
+	
+	  // add entities
+	  admin.addEntity(area);
+	  admin.addEntity(restaurant);
+	
+	  // config
+	  admin.dashboard(__webpack_require__(5)(nga, admin));
+	
+	  // attach admin entity to DOM and execute
+	  nga.configure(admin);
+	}]);
+	
+	//var headerTemplate =
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	
+	var _dashboardPickerHtml = __webpack_require__(3);
+	
+	var _dashboardPickerHtml2 = _interopRequireDefault(_dashboardPickerHtml);
+	
+	function dashboardPicker() {
+	  'use strict';
+	
+	  return {
+	    restrict: 'E',
+	    controller: function controller($scope) {
+	      $scope.areasClass = "active";
+	      $scope.restaurantsClass = "";
+	      $scope.genresClass = "";
+	      $scope.setActive = function (name) {
+	        if (name === "areas") {
+	          $scope.areasClass = "active";
+	          $scope.restaurantsClass = "";
+	          $scope.genresClass = "";
+	        } else if (name === "restaurants") {
+	          $scope.areasClass = "";
+	          $scope.restaurantsClass = "active";
+	          $scope.genresClass = "";
+	        } else if (name === "genres") {
+	          $scope.areasClass = "";
+	          $scope.restaurantsClass = "";
+	          $scope.genresClass = "active";
+	        }
+	      };
+	    },
+	    template: _dashboardPickerHtml2['default']
+	  };
+	}
+	
+	exports['default'] = dashboardPicker;
+	module.exports = exports['default'];
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"row\">\n  <section class=\"dashboard-link-picker col-md-12\">\n    <ul>\n      <li class={{areasClass}} ng-click='setActive(\"areas\")'>\n        Areas\n      </li>\n      <li class={{restaurantsClass}} ng-click='setActive(\"restaurants\")'>\n        Restaurants\n      </li>\n      <li class={{genresClass}} ng-click='setActive(\"genres\")'>\n        Genres\n      </li>\n    </ul>\n  </section>\n</div>\n";
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports["default"] = function (nga, admin) {
+	  return "\n<nav id=\"header-nav\" class=\"navbar navbar-default navbar-static-top\" role=\"navigation\">\n  <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-left\" ng-click=\"isCollapsed = !isCollapsed\">\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"#\" ng-click=\"appController.displayHome()\" class=\"navbar-brand\">\n        {{ ::appController.applicationName }}\n      </a>\n  </div>\n</nav>";
+	};
+	
+	module.exports = exports["default"];
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	exports['default'] = function (nga, admin) {
+	
+	    // Customize dashboard
+	    return nga.dashboard().template(__webpack_require__(6)).addCollection(nga.collection(nga.entity('areas')).name('areas').title('Areas').perPage(10) // limit to 10 latest
+	    .fields([nga.field('name').template('<a href="#/areas/show/{{entry.values.id}}">{{value}}</a>')]));
+	};
+	
+	module.exports = exports['default'];
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = "<section row class=\"dashboard-main\">\n  <h2>Good, Cheap Restaurants In Tokyo</h2>\n</section>\n<dashboard-picker></dashboard-picker>\n<section class=\"row dashboard-content\">\n    <div class=\"col-lg-12\">\n      <ma-dashboard-panel collection=\"dashboardController.collections.areas\" entries=\"dashboardController.entries.areas\" datastore=\"dashboardController.datastore\"></ma-dashboard-panel>\n    </div>\n</section>\n"
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }
+/******/ ]);
+//# sourceMappingURL=main.js.map
