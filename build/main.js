@@ -45,12 +45,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(2);
+	module.exports = __webpack_require__(5);
 
 
 /***/ },
 /* 1 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	// declare a new module called 'tokyoRestaurants', and make it require the `ng-admin` module as a dependency
 	'use strict';
@@ -63,7 +63,7 @@
 	  // create an admin application
 	  var admin = nga.application('Tokyo Restaurants')
 	  //.baseApiUrl('http://localhost:3000/v1/')
-	  .baseApiUrl('http://trapi.etdev.me/v1/').header(headerTemplate);
+	  .baseApiUrl('http://trapi.etdev.me/v1/').header(__webpack_require__(2)(nga, admin));
 	
 	  // create area entity, set fields
 	  var area = nga.entity('areas');
@@ -77,24 +77,62 @@
 	
 	  restaurant.listView().fields([nga.field('name').template('<a href="{{entry.values.url}}">{{value}}</a>'), nga.field('rating'), nga.field('price_range'), nga.field('genres')]);
 	
-	  // add area entity
+	  // add entities
 	  admin.addEntity(area);
 	  admin.addEntity(restaurant);
 	
-	  // Customize dashboard
-	  admin.dashboard(nga.dashboard().template(dashboardTemplate).addCollection(nga.collection(area).name('areas').title('Areas').perPage(10) // limit the panel to the 5 latest posts
-	  .fields([nga.field('name').isDetailLink(true)])));
+	  // config
+	  admin.dashboard(__webpack_require__(3)(nga, admin));
 	
 	  // attach admin entity to DOM and execute
 	  nga.configure(admin);
 	}]);
 	
-	var dashboardTemplate = '<section row class="dashboard-main">' + '<h2>Good, Cheap Restaurants In Tokyo</h2>' + '</section>' + '<section class="dashboard-link-picker">' + '<ul>' + '<li class="active">Areas</li>' + '<li>Restaurants</li>' + '<li>Genres</li>' + '</ul>' + '<section>' + '<section class="row dashboard-content">' + '<div class="col-lg-12">' + '<ma-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore"></ma-dashboard-panel>' + '</div>' + '</section>';
-	
-	var headerTemplate = '<nav id="header-nav" class="navbar navbar-default navbar-static-top" role="navigation">' + '<div class="navbar-header">' + '<button type="button" class="navbar-toggle pull-left" ng-click="isCollapsed = !isCollapsed">' + '<span class="icon-bar"></span>' + '<span class="icon-bar"></span>' + '<span class="icon-bar"></span>' + '</button>' + '<a href="#" ng-click="appController.displayHome()" class="navbar-brand">{{ ::appController.applicationName }}</a>' + '</div>' + '</span>' + '</nav>';
+	//var headerTemplate =
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports["default"] = function (nga, admin) {
+	  return "\n<nav id=\"header-nav\" class=\"navbar navbar-default navbar-static-top\" role=\"navigation\">\n  <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle pull-left\" ng-click=\"isCollapsed = !isCollapsed\">\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n      </button>\n      <a href=\"#\" ng-click=\"appController.displayHome()\" class=\"navbar-brand\">\n        {{ ::appController.applicationName }}\n      </a>\n  </div>\n</nav>";
+	};
+	
+	module.exports = exports["default"];
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+	
+	exports['default'] = function (nga, admin) {
+	
+	    // Customize dashboard
+	    return nga.dashboard().template(__webpack_require__(4)).addCollection(nga.collection(nga.entity('areas')).name('areas').title('Areas').perPage(10) // limit the panel to the 5 latest posts
+	    .fields([nga.field('name').isDetailLink(true)]));
+	};
+	
+	module.exports = exports['default'];
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = "<section row class=\"dashboard-main\">\n  <h2>Good, Cheap Restaurants In Tokyo</h2>\n</section>\n<section class=\"dashboard-link-picker\">\n  <ul>\n    <li class=\"active\">Areas</li>\n    <li>Restaurants</li>\n    <li>Genres</li>\n  </ul>\n<section>\n<section class=\"row dashboard-content\">\n    <div class=\"col-lg-12\">\n      <ma-dashboard-panel collection=\"dashboardController.collections.areas\" entries=\"dashboardController.entries.areas\" datastore=\"dashboardController.datastore\"></ma-dashboard-panel>\n    </div>\n</section>\n"
+
+/***/ },
+/* 5 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

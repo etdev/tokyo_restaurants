@@ -12,7 +12,7 @@ module.exports = {
             { test: /\.css$/, loader: "style!css" },
             { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel' },
             { test: /node_modules[\\\/]admin-config[\\\/].*\.jsx?$/, loader: 'babel' },
-            { test: /\.html$/, loader: 'html' },
+            { test: /\.html$/, loaders: ["html"] },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('css') },
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },
             { test: /\.jpg$/, loader: "file?name=images/[name].[ext]" }

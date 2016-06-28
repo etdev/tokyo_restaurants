@@ -1,18 +1,15 @@
 <section row class="dashboard-main">
   <h2>Good, Cheap Restaurants In Tokyo</h2>
 </section>
-
 <section class="dashboard-link-picker">
   <ul>
     <li class="active">Areas</li>
     <li>Restaurants</li>
     <li>Genres</li>
   </ul>
-</section>
-
+<section>
 <section class="row dashboard-content">
     <div class="col-lg-12">
-      <ma-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore">
-      </ma-dashboard-panel>
+      <ma-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore"></ma-dashboard-panel>
     </div>
 </section>
