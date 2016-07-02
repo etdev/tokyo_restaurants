@@ -3,20 +3,36 @@
     <head>
         <meta charset="utf-8">
         <title>Tokyo Restaurants</title>
-        <link rel="stylesheet" href="build/ng-admin.min.css">
         <link rel="stylesheet" href="build/main.css">
 
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 
-        <!-- responsive meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
     <body ng-app="tokyoRestaurants">
-        <div ui-view></div>
-        <script type="text/javascript" src="build/ng-admin.min.js" charset="utf-8"></script>
-        <script type="text/javascript" src="build/main.js" charset="utf-8"></script>
+      <ng-include src="'templates/menu.html'"></ng-include>
+      <div ng-view></div>
+
+      <!-- jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="build/angular.js" charset="utf-8"></script>
+      <script type="text/javascript" src="build/angular-route.min.js" charset="utf-8"></script>
+      <script type="text/javascript" src="build/underscore.js" charset="utf-8"></script>
+      <script type="text/javascript" src="build/restangular.js" charset="utf-8"></script>
+      <script type="text/javascript" src="build/jasny-bootstrap.js" charset="utf-8"></script>
+      <script type="text/javascript" src="build/main.js" charset="utf-8"></script>
+
     </body>
 </html>
