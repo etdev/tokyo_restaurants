@@ -1,3 +1,6 @@
+@import "mixins";
+@import "dashboard";
+
 * {
   box-sizing: border-box;
 }
@@ -106,37 +109,6 @@ html, body {
 
   .panel-heading {
     display: none;
-  }
-
-  .dashboard-content th {
-    display: none;
-  }
-
-  .dashboard-content td {
-    display: block;
-    min-height: 50px;
-    line-height: 50px;
-    background: #FFF !important;
-    border-top: none !important;
-    padding: 0 !important;
-    border-bottom: 1px solid #EEF1F5;
-  }
-
-  .dashboard-content tr {
-    border: none;
-  }
-
-  .dashboard-content td a {
-    &:hover, &:active {
-      background: darken(#FFF, 3%);
-      text-decoration: none;
-    }
-    line-height: 50px;
-    display: block;
-    height: 50px;
-    color: #434343;
-    font-weight: bold;
-    padding-left: 15px;
   }
 
   // header

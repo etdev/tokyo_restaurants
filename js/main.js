@@ -3,15 +3,17 @@ var tokyoRestaurants = angular.module('tokyoRestaurants', ['ng-admin']);
 var baseUrl = 'http://trapi.etdev.me/v1/';
 
 // custom directives
-tokyoRestaurants.directive('dashboardPicker', require('./dashboard/dashboardPicker'));
+tokyoRestaurants.directive('trDashboardPicker', require('./directives/dashboard/trDashboardPicker'));
+tokyoRestaurants.directive('trDashboardPanel', require('./directives/dashboard/trDashboardPanel'));
+tokyoRestaurants.directive('trListItem', require('./directives/shared/trListItem'));
 
 // declare a function to run when the module bootstraps (during the 'config' phase)
 tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
 
     // create an admin application
     var admin = nga.application('Tokyo Restaurants')
-      .baseApiUrl('http://trapi.etdev.me/v1/')
-      //.baseApiUrl('http://localhost:4444/v1/')
+      //.baseApiUrl('http://trapi.etdev.me/v1/')
+      .baseApiUrl('http://localhost:4444/v1/')
       .header(require('./header/template')(nga, admin));
 
     // create area entity, set fields

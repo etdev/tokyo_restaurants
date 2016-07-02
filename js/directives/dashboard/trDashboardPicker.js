@@ -1,4 +1,4 @@
-import dashboardPickerTemplate from './dashboardPicker.html';
+import dashboardPickerTemplate from '../../../templates/dashboardPicker.html';
 
 function dashboardPicker() {
     'use strict';
