@@ -10,8 +10,8 @@ tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
 
     // create an admin application
     var admin = nga.application('Tokyo Restaurants')
-      //.baseApiUrl('http://localhost:3000/v1/')
       .baseApiUrl('http://trapi.etdev.me/v1/')
+      //.baseApiUrl('http://localhost:4444/v1/')
       .header(require('./header/template')(nga, admin));
 
     // create area entity, set fields
@@ -30,6 +30,8 @@ tokyoRestaurants.config(['NgAdminConfigurationProvider', function (nga) {
             nga.field('name')
               .template('<a href="{{entry.values.url}}">{{value}}</a>'),
             nga.field('genres'),
+            nga.field('thumbnail'),
+            nga.field('english_name'),
             nga.field('rating'),
             nga.field('price_range'),
           ])
