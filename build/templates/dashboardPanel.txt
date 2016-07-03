@@ -1,9 +1,0 @@
-<section row class="dashboard-main">
-  <h2>Good, Cheap Restaurants In Tokyo</h2>
-</section>
-<tr-dashboard-picker></tr-dashboard-picker>
-<section class="row dashboard-content">
-    <div class="col-lg-12">
-      <tr-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore"></tr-dashboard-panel>
-    </div>
-</section>
