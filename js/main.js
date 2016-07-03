@@ -1,7 +1,12 @@
 //var baseUrl = 'http://trapi.etdev.me/v1/';
 var baseUrl = 'http://localhost:4444/v1/';
 
-angular.module('tokyoRestaurants', ['restangular', 'ngRoute']).config(function($routeProvider, RestangularProvider) {
+var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ngRoute']);
+
+// directives
+tokyoRestaurants.directive('trDashboardPicker', require('./directives/dashboard/trDashboardPicker'));
+
+tokyoRestaurants.config(function($routeProvider, RestangularProvider) {
 $routeProvider.
   when('/', {
     controller: ListCtrl,

@@ -9,10 +9,12 @@
           <tr-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore"></tr-dashboard-panel>
         </div>
     </section>
-
     <ul>
       <li ng-repeat="area in areas">
-        <div><a href="areas" target="_blank">{{area.thumbnail}}</a></div>
+        <area-list-item>
+        </area-list-item>
+        <div>
+          <a href="areas" target="_blank">{{area.thumbnail}}</a>
         <div> {{area.english_name}} </div>
       </li>
     </ul>
