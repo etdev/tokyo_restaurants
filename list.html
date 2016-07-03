@@ -3,21 +3,15 @@
     <section row class="dashboard-main">
       <h2>Good, Cheap Restaurants In Tokyo</h2>
     </section>
+
     <tr-dashboard-picker></tr-dashboard-picker>
-    <section class="row dashboard-content">
-        <div class="col-lg-12">
-          <tr-dashboard-panel collection="dashboardController.collections.areas" entries="dashboardController.entries.areas" datastore="dashboardController.datastore"></tr-dashboard-panel>
-        </div>
+
+    <section class="tr-item-list">
+      <ul>
+        <tr-area-list-item ng-repeat="area in areas"></tr-area-list-item>
+      </ul>
     </section>
-    <ul>
-      <li ng-repeat="area in areas">
-        <area-list-item>
-        </area-list-item>
-        <div>
-          <a href="areas" target="_blank">{{area.thumbnail}}</a>
-        <div> {{area.english_name}} </div>
-      </li>
-    </ul>
+
   </div>
 
   <div id="loader"></div>

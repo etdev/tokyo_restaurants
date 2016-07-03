@@ -1,8 +1,8 @@
+@import "reset";
 @import "mixins";
 @import "navMenu";
 @import "dashboard";
-@import "reset";
-@import "vendor/jasny/jasny-bootstrap.min.css";
+@import "vendor/jasny/jasny-bootstrap.css";
 
 * {
   box-sizing: border-box;
