@@ -1,0 +1,15 @@
+.area-main {
+  padding: 15px;
+  height: 190px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  > h2 {
+    color: white;
+    margin-top: 50px;
+    font-size: 1.8em;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: 800;
+  }
+}

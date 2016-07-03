@@ -10,10 +10,15 @@ export default function(tokyoRestaurants) {
         $scope.loading = "Finished loading";
       });
     },
-    AreasShowCtrl: function($scope, Restangular) {
+    AreasShowCtrl: function($scope, $routeParams, Restangular) {
       $scope.loading = "Loading...";
-      Restangular.one("areas", $scope.$id).get().then(function(area) {
-        debugger;
+      $scope.id = $routeParams.id;
+      Restangular.one("areas", $scope.id).get().then(function(area) {
+        $scope.area = area;
+        area.all("restaurants").getList().then(function(restaurants) {
+          $scope.restaurants = restaurants;
+          $scope.restaurants.map(r => r.price_range_arr = new Array(r.price_range));
+        });
       });
     }
   };

@@ -1,64 +1,60 @@
-$item-bg-color: #fff;
-$item-primary-text-color: #434343;
-$item-secondary-text-color: lighten($item-primary-text-color, 30%);
-$item-height: 70px;
-$item-line-height: $item-height;
-$thumb-height: 60px;
-$thumb-width: 80px;
-$thumb-margin: ($item-height - $thumb-height) / 2;
+.home-main {
+  padding: 15px;
+  height: 190px;
+  background:
+    linear-gradient(
+      rgba(0,0,0,0.55),
+      rgba(0,0,0,0.55)
+    ),
+    url(../images/home_main.jpg);
 
-.tr-item-list {
-  padding-left: 0;
-
-  li {
-    @include clearfix;
-    color: $item-primary-text-color;
-    font-weight: bold;
-    height: $item-height;
-    line-height: $item-line-height;
-    border-bottom: 1px solid darken($item-bg-color, 3%);
-    a {
-      height: $item-height;
-      padding: $thumb-margin 15px;
-      display: block;
-      cursor: pointer;
-      transition: background 0.2s ease-in-out;
-      &:hover {
-        background: darken($item-bg-color, 3%);
-        text-decoration: none;
-      }
-    }
-  }
-
-  .item-thumbnail {
-    border-radius: 2px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: inline-block;
-    float: right;
-    height: $thumb-height;
-    width: $thumb-width;
-  }
-
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
-.item-info {
-  color: $item-primary-text-color;
-  margin-top: $thumb-margin;
-  height: $item-height - $thumb-margin * 2;
-  display: inline-block;
-  float: left;
+@media(min-width: 767px) {
+  .home-main {
+    height: 390px;
+    padding-top: 100px;
+  }
+}
 
-  .main-title {
-    height: ($item-height - $thumb-margin * 2) / 2;
-    line-height: ($item-height - $thumb-margin * 2) / 2;
-    font-size: 1.1em;
-  }
-  .sub-title {
-    color: $item-secondary-text-color;
-    height: ($item-height - $thumb-margin * 2) / 2;
-    line-height: 1.8em;
-    font-size: 0.9em;
-  }
+.home-main > h2 {
+  color: white;
+  margin-top: 50px;
+  font-size: 1.8em;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-weight: 800;
+}
+
+#page-wrapper {
+  padding: 0 !important;
+}
+
+.home-link-picker ul {
+  list-style: none;
+  background: #F8F9F9;
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+.home-link-picker ul li {
+  color: #9A9EA2;
+  display: inline-block;
+  width: 33.3%;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 10px;
+  border-bottom: 2px solid #EEF1F5;
+  float: left;
+}
+
+.home-link-picker ul li.active {
+  color: #434343;
+  border-bottom: 3px solid $primary-color;
 }

@@ -1,76 +1,10 @@
 @import "reset";
 @import "defaults";
+@import "variables";
 @import "mixins";
-@import "navMenu";
 @import "home";
+@import "navMenu";
+@import "list";
+@import "areas";
+@import "restaurants";
 @import "vendor/jasny/jasny-bootstrap.css";
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.home-main {
-  padding: 15px;
-  height: 190px;
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.55)
-    ),
-    url(../images/home_main.jpg);
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-@media(min-width: 767px) {
-  .home-main {
-    height: 390px;
-    padding-top: 100px;
-  }
-}
-
-.home-main > h2 {
-  color: white;
-  margin-top: 50px;
-  font-size: 1.8em;
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  font-weight: 800;
-}
-
-#page-wrapper {
-  padding: 0 !important;
-}
-
-.home-link-picker ul {
-  list-style: none;
-  background: #F8F9F9;
-  padding: 0;
-  margin: 0;
-  display: block;
-}
-
-.home-link-picker ul li {
-  color: #9A9EA2;
-  display: inline-block;
-  width: 33.3%;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  height: 46px;
-  line-height: 46px;
-  padding: 0 10px;
-  border-bottom: 2px solid #EEF1F5;
-  float: left;
-}
-
-.home-link-picker ul li.active {
-  color: #434343;
-  border-bottom: 3px solid #47C3BF;
-}
