@@ -1,9 +1,10 @@
 $item-bg-color: #fff;
 $item-primary-text-color: #434343;
 $item-secondary-text-color: lighten($item-primary-text-color, 30%);
-$item-height: 60px;
+$item-height: 70px;
 $item-line-height: $item-height;
-$thumb-height: 50px;
+$thumb-height: 60px;
+$thumb-width: 80px;
 $thumb-margin: ($item-height - $thumb-height) / 2;
 
 .tr-item-list {
@@ -17,6 +18,7 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     line-height: $item-line-height;
     border-bottom: 1px solid darken($item-bg-color, 3%);
     a {
+      height: $item-height;
       padding: $thumb-margin 15px;
       display: block;
       cursor: pointer;
@@ -34,28 +36,29 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;
-    float: left;
+    float: right;
     height: $thumb-height;
-    width: $thumb-height;
+    width: $thumb-width;
   }
 
 }
 
 .item-info {
-  text-align: right;
   color: $item-primary-text-color;
-  font-size: 1em;
   margin-top: $thumb-margin;
   height: $item-height - $thumb-margin * 2;
+  display: inline-block;
+  float: left;
 
   .main-title {
     height: ($item-height - $thumb-margin * 2) / 2;
     line-height: ($item-height - $thumb-margin * 2) / 2;
+    font-size: 1.1em;
   }
   .sub-title {
     color: $item-secondary-text-color;
     height: ($item-height - $thumb-margin * 2) / 2;
-    line-height: 1.4em;
-    font-size: 0.7em;
+    line-height: 1.8em;
+    font-size: 0.9em;
   }
 }
