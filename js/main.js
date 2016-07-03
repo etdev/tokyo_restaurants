@@ -3,9 +3,8 @@ var baseUrl = 'http://trapi.etdev.me/v1/';
 
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ngRoute']);
 
-// directives
-tokyoRestaurants.directive('trDashboardPicker', require('./directives/dashboard/trDashboardPicker'));
-tokyoRestaurants.directive('trAreaList', require('./directives/areas/trAreaList'));
+// define directives
+require("./directives/config")(tokyoRestaurants);
 
 tokyoRestaurants.config(function($routeProvider, RestangularProvider) {
 $routeProvider.
