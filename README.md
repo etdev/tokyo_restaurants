@@ -8,6 +8,7 @@ A curated list of some of the best affordable restaurants in Tokyo
 * Fix menu/navbar
 * Add show page
 * Fix PC design
+* Pagination
 
 ### Usage - production
 

@@ -7,8 +7,10 @@ export default function(tokyoRestaurants, controllers, baseUrl) {
     }).when('/areas/:id', {
       controller: controllers.AreasShowCtrl,
       templateUrl: 'templates/areas/show.html'
+    }).when('/restaurants/:id', {
+      controller: controllers.RestaurantsShowCtrl,
+      templateUrl: 'templates/restaurants/show.html'
     });
-
     RestangularProvider.setBaseUrl(baseUrl);
   });
 }

@@ -9,6 +9,9 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
 
 .tr-item-list {
   padding-left: 0;
+  margin: 0;
+  width: 100%;
+  overflow: hidden;
 
   li {
     @include clearfix;
@@ -17,6 +20,7 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     height: $item-height;
     line-height: $item-line-height;
     border-bottom: 1px solid darken($item-bg-color, 3%);
+    padding: 0;
     a {
       height: $item-height;
       padding: $thumb-margin 15px;
@@ -49,11 +53,14 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
   height: $item-height - $thumb-margin * 2;
   display: inline-block;
   float: left;
+  overflow: hidden;
+  max-width: 215px;
 
   .main-title {
     height: ($item-height - $thumb-margin * 2) * 3 / 5;
     line-height: ($item-height - $thumb-margin * 2) * 3 / 5;
     font-size: 1.1em;
+    overflow: hidden;
   }
 
   .sub-title {
@@ -61,6 +68,7 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     height: ($item-height - $thumb-margin * 2) * 2 / 5;
     line-height: 1.8em;
     font-size: 0.9em;
+    overflow: hidden;
   }
 
 }
