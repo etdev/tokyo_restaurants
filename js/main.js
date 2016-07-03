@@ -1,3 +1,9 @@
+require('angular')
+require('restangular-umd');
+require('underscore');
+require('angular-route')
+require('../build/jasny-bootstrap.js');
+
 var baseUrl = 'http://trapi.etdev.me/v1/';
 //var baseUrl = 'http://localhost:4444/v1/';
 

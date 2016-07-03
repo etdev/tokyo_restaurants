@@ -24,7 +24,7 @@
     "moment": "^2.10.6",
     "node-sass": "^3.3.2",
     "raw-loader": "^0.5.1",
-    "restangular": "^1.5.2",
+    "restangular-umd": "^1.0.1",
     "sass-loader": "^2.0.1",
     "sinon": "ubervu/Sinon.JS",
     "style-loader": "^0.12.3",
