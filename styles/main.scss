@@ -2,7 +2,7 @@
 @import "defaults";
 @import "mixins";
 @import "navMenu";
-@import "dashboard";
+@import "home";
 @import "vendor/jasny/jasny-bootstrap.css";
 
 * {
@@ -14,7 +14,7 @@ html, body {
   overflow-x: hidden;
 }
 
-.dashboard-main {
+.home-main {
   padding: 15px;
   height: 190px;
   background:
@@ -22,7 +22,7 @@ html, body {
       rgba(0,0,0,0.55),
       rgba(0,0,0,0.55)
     ),
-    url(../images/dashboard_main.jpg);
+    url(../images/home_main.jpg);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -30,13 +30,13 @@ html, body {
 }
 
 @media(min-width: 767px) {
-  .dashboard-main {
+  .home-main {
     height: 390px;
     padding-top: 100px;
   }
 }
 
-.dashboard-main > h2 {
+.home-main > h2 {
   color: white;
   margin-top: 50px;
   font-size: 1.8em;
@@ -49,7 +49,7 @@ html, body {
   padding: 0 !important;
 }
 
-.dashboard-link-picker ul {
+.home-link-picker ul {
   list-style: none;
   background: #F8F9F9;
   padding: 0;
@@ -57,7 +57,7 @@ html, body {
   display: block;
 }
 
-.dashboard-link-picker ul li {
+.home-link-picker ul li {
   color: #9A9EA2;
   display: inline-block;
   width: 33.3%;
@@ -70,7 +70,7 @@ html, body {
   float: left;
 }
 
-.dashboard-link-picker ul li.active {
+.home-link-picker ul li.active {
   color: #434343;
   border-bottom: 3px solid #47C3BF;
 }

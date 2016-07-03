@@ -1,6 +1,6 @@
-import dashboardPickerTemplate from '../../../templates/dashboardPicker.html';
+import homePickerTemplate from '../../../templates/home/homePicker.html';
 
-function dashboardPicker() {
+function homePicker() {
     'use strict';
 
     return {
@@ -25,8 +25,8 @@ function dashboardPicker() {
                       }
                     };
                 },
-        template: dashboardPickerTemplate
+        template: homePickerTemplate
     };
 }
 
-export default dashboardPicker;
+export default homePicker;
