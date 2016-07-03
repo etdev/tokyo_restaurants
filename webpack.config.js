@@ -11,7 +11,6 @@ module.exports = {
         loaders: [
             { test: /\.css$/, loader: "style!css" },
             { test: /\.jsx?$/, exclude: /(node_modules|bower_components)/, loader: 'babel' },
-            { test: /node_modules[\\\/]admin-config[\\\/].*\.jsx?$/, loader: 'babel' },
             { test: /\.html$/, loaders: ["html"] },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('css') },
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },

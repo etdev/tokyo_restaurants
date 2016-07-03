@@ -4,7 +4,7 @@ A curated list of some of the best affordable restaurants in Tokyo
 
 ### Usage
 
-Install `ng-admin` node package
+Install `restangular` node package
 
 ```bash
 npm install ng-admin --save
