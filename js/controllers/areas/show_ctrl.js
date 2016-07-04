@@ -1,10 +1,16 @@
 export default function($scope, $routeParams, $window, Restangular) {
-  $scope.loading = "Loading...";
+  var page = typeof($routeParams["page"]) === "undefined" ? 1 : parseInt($routeParams["page"]);
   $scope.id = $routeParams.id;
+  $scope.currentPage = page;
+  $scope.perPage = 20; // TODO don't hardcode, extract to service?
 
   Restangular.one("areas", $scope.id).get().then(function(area) {
     $scope.area = area;
-    area.all("restaurants").getList().then(function(restaurants) {
+    $scope.totalItems = area.restaurants_count;
+    $scope.next = ($scope.totalItems > $scope.currentPage * $scope.perPage);
+    $scope.prev = ($scope.currentPage > 1);
+
+    area.all("restaurants").getList({page: page}).then(function(restaurants) {
       $scope.restaurants = restaurants;
       var widthMultiplier = $window.innerWidth / 460;
       for (var r of restaurants) {

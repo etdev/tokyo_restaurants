@@ -1,0 +1,16 @@
+$pagination-height: 60px;
+$pagination-border: #eee;
+
+.pagination {
+  display: block;
+  color: $primary-color;
+  .next-btn, .prev-btn {
+    height: $pagination-height;
+    border: 1px solid $pagination-border;
+    width: 100px;
+    span {
+      line-height: $pagination-height;
+      text-align: center;
+    }
+  }
+}
