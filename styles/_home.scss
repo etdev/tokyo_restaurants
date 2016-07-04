@@ -16,7 +16,7 @@
 
 @media(min-width: 767px) {
   .home-main {
-    height: 390px;
+    height: 250px;
     padding-top: 100px;
   }
 }
@@ -36,6 +36,7 @@
 
 .home-link-picker ul {
   list-style: none;
+  cursor: pointer;
   background: #F8F9F9;
   padding: 0;
   margin: 0;
