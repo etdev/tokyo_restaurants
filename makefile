@@ -6,11 +6,10 @@ install:
 build: create-build-dir copy-files
 	@./node_modules/.bin/webpack  --progress --colors --devtool source-map
 
-copy-files: create-build-dir copy-jasny copy-templates copy-images
+copy-files: create-build-dir copy-vendor-js copy-templates copy-images
 
-copy-jasny:
-	@cp ./js/vendor/jasny-bootstrap.min.js build/
-	@cp ./js/vendor/jasny-bootstrap.js build/
+copy-vendor-js:
+	@cp -R ./js/vendor/* build/
 
 copy-templates:
 	mkdir -p ./build/templates

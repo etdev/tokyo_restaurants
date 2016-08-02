@@ -4,6 +4,8 @@ import Restangular from "restangular-umd";
 import _ from "underscore";
 import ngRoute from "angular-route";
 import jasnyBootstrap from "../build/jasny-bootstrap.js";
+//import slidebars from "../build/slidebars";
+//import slidebars from "../build/slidebars";
 
 const baseUrl = 'http://trapi.etdev.me/v1/';
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ngRoute']);

@@ -4,19 +4,26 @@
         <meta charset="utf-8">
         <title>Tokyo Restaurants</title>
         <link rel="stylesheet" href="build/main.css">
+
         <ng-include src="'templates/shared/style_link_tags.html'"></ng-include>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body ng-app="tokyoRestaurants">
+      <ng-include src="'templates/header.html'"></ng-include>
+    <div off-canvas="id-1 left reveal">
       <ng-include src="'templates/menu.html'"></ng-include>
+    </div>
 
-      <div ng-view></div>
+      <div class="ng-view-container" canvas="container">
 
-      <!-- jQuery -->
+        <div ng-view></div>
+      </div>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Bootstrap -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="build/slidebars.js" charset="utf-8"></script>
       <script type="text/javascript" src="build/main.js" charset="utf-8"></script>
 
     </body>
