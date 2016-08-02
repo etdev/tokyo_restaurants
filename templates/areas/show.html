@@ -1,5 +1,7 @@
-<section class="area-main" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url({{ area.thumbnail }});">
-  <h2> Restaurants in {{ area.english_name }}</h2>
+<section class="area-main" style="background-image: url('../images/overlay.png'), url({{ area.thumbnail }});">
+  <ng-include src="'templates/header.html'"></ng-include>
+  <h2>Restaurants in {{ area.english_name }}</h2>
+  <p class="subtitle">Have a look at what {{ area.english_name }} has to offer</h2>
 </section>
 
 <section class="tr-item-list">

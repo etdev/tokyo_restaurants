@@ -1,14 +1,7 @@
 .home-main {
   width: 100%;
-  padding: 15px;
-  height: 190px;
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.55)
-    ),
-    url(../images/home_main.jpg);
-
+  height: 420px;
+  background-image: url("../images/overlay.png"), url("https://static.pexels.com/photos/5929/food-salad-dinner-eating.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -16,24 +9,32 @@
 
 @media(min-width: 767px) {
   .home-main {
-    height: 250px;
     padding-top: 0;
     display: inline-block;
+    text-align: center;
     > h2 {
       margin-top: 0 !important;
-      height: 250px;
-      line-height: 250px;
+    }
+    > .subtitle {
+      color: #fff;
     }
   }
 }
 
 .home-main > h2 {
   color: white;
-  margin-top: 50px;
-  font-size: 1.8em;
-  font-family: 'Open Sans', sans-serif;
+  margin-top: 110px;
+  font-size: 1.6em;
   text-align: center;
-  font-weight: 800;
+  font-weight: bold;
+  font-family: "Raleway", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.home-main > .subtitle {
+  color: white;
+  text-align: center;
+  font-family: "Raleway", Helvetica, sans-serif;
+  text-transform: uppercase;
 }
 
 #page-wrapper {

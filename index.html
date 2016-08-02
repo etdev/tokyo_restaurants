@@ -10,13 +10,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     </head>
     <body ng-app="tokyoRestaurants">
-      <ng-include src="'templates/header.html'"></ng-include>
-    <div off-canvas="id-1 left reveal">
-      <ng-include src="'templates/menu.html'"></ng-include>
-    </div>
+      <div off-canvas="id-1 left overlay">
+        <ng-include src="'templates/menu.html'"></ng-include>
+      </div>
 
       <div class="ng-view-container" canvas="container">
-
         <div ng-view></div>
       </div>
 

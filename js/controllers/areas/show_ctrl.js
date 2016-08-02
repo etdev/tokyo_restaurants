@@ -2,7 +2,7 @@ export default function($scope, $routeParams, $window, Restangular) {
   var page = typeof($routeParams["page"]) === "undefined" ? 1 : parseInt($routeParams["page"]);
   $scope.id = $routeParams.id;
   $scope.currentPage = page;
-  $scope.perPage = 20; // TODO don't hardcode, extract to service?
+  $scope.perPage = 50; // TODO don't hardcode, extract to service?
 
   Restangular.one("areas", $scope.id).get().then(function(area) {
     $scope.area = area;

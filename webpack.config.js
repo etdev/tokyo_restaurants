@@ -14,7 +14,8 @@ module.exports = {
             { test: /\.html$/, loaders: ["html"] },
             { test: /\.css$/, loader: ExtractTextPlugin.extract('css') },
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass') },
-            { test: /\.jpg$/, loader: "file?name=images/[name].[ext]" }
+            { test: /\.jpg$/, loader: "file?name=images/[name].[ext]" },
+            { test: /\.png$/, loader: "file?name=images/[name].[ext]" }
         ]
     },
     plugins: [

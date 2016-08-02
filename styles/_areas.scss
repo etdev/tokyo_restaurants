@@ -1,15 +1,38 @@
 .area-main {
-  padding: 15px;
-  height: 190px;
+  width: 100%;
+  height: 420px;
+  background-image: url("../images/overlay.png"), url("https://static.pexels.com/photos/5929/food-salad-dinner-eating.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  > h2 {
-    color: white;
-    margin-top: 50px;
-    font-size: 1.8em;
-    font-family: 'Open Sans', sans-serif;
+}
+
+@media(min-width: 767px) {
+  .area-main {
+    padding-top: 0;
+    display: inline-block;
     text-align: center;
-    font-weight: 800;
+    > h2 {
+      margin-top: 0 !important;
+    }
+    > .subtitle {
+      color: #fff;
+    }
   }
+}
+
+.area-main > h2 {
+  color: white;
+  margin-top: 110px;
+  font-size: 1.6em;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Raleway", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.area-main > .subtitle {
+  color: white;
+  text-align: center;
+  font-family: "Raleway", Helvetica, sans-serif;
+  text-transform: uppercase;
 }
