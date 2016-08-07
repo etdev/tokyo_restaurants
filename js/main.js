@@ -7,7 +7,8 @@ import jasnyBootstrap from "../build/jasny-bootstrap.js";
 //import slidebars from "../build/slidebars";
 //import slidebars from "../build/slidebars";
 
-const baseUrl = 'http://trapi.etdev.me/v1/';
+//const baseUrl = 'http://trapi.etdev.me/v1/';
+const baseUrl = 'http://localhost:4545/v1/';
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ngRoute']);
 
 // define directives

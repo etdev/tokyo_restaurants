@@ -2,12 +2,9 @@
 @import "defaults";
 @import "variables";
 @import "mixins";
-@import "home";
-@import "header";
-@import "menu";
-@import "list";
-@import "areas";
-@import "restaurants";
-@import "pagination";
+
+@import "components";
+@import "pages";
+
 @import "vendor/jasny/jasny-bootstrap.css";
 @import "vendor/slidebars/slidebars.css";

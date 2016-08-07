@@ -1,4 +1,4 @@
-.home-main {
+.area-main {
   width: 100%;
   height: 420px;
   background-image: url("../images/overlay.png"), url("https://static.pexels.com/photos/5929/food-salad-dinner-eating.jpg");
@@ -7,13 +7,13 @@
   background-position: 50% 50%;
 }
 
-@media(min-width: 767px) {
-  .home-main {
+@include media(sm) {
+  .area-main {
     padding-top: 0;
     display: inline-block;
     text-align: center;
     > h2 {
-      margin-top: 0 !important;
+      margin-top: 0;
     }
     > .subtitle {
       color: #fff;
@@ -21,7 +21,7 @@
   }
 }
 
-.home-main > h2 {
+.area-main > h2 {
   color: white;
   margin-top: 110px;
   font-size: 1.6em;
@@ -30,40 +30,9 @@
   font-family: "Raleway", Helvetica, sans-serif;
   text-transform: uppercase;
 }
-.home-main > .subtitle {
+.area-main > .subtitle {
   color: white;
   text-align: center;
   font-family: "Raleway", Helvetica, sans-serif;
   text-transform: uppercase;
-}
-
-#page-wrapper {
-  padding: 0 !important;
-}
-
-.home-link-picker ul {
-  list-style: none;
-  cursor: pointer;
-  background: #F8F9F9;
-  padding: 0;
-  margin: 0;
-  display: block;
-}
-
-.home-link-picker ul li {
-  color: #9A9EA2;
-  display: inline-block;
-  width: 33.3%;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-  height: 46px;
-  line-height: 46px;
-  padding: 0 10px;
-  border-bottom: 2px solid #EEF1F5;
-  float: left;
-}
-
-.home-link-picker ul li.active {
-  color: #434343;
-  border-bottom: 3px solid $primary-color;
 }

@@ -1,0 +1,40 @@
+.tr-btn {
+  @include default-font;
+  background-color: $primary-color;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  width: 85px;
+  a {
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  &:hover {
+    background-color: darken($primary-color, 5%);
+  }
+
+  &.large {
+    font-size: 1.4em;
+    height: 55px;
+    line-height: 55px;
+    width: 200px;
+  }
+
+  &.round {
+    border-radius: 500px;
+  }
+
+  &.primary {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,28 @@
+$menu-bg-color: #212021;
+
+[off-canvas] {
+  background-color: $menu-bg-color !important;
+}
+
+.menu {
+  background-color: $menu-bg-color;
+  ul li {
+    height: 50px;
+    line-height: 50px;
+    a {
+      display: block;
+      padding: 0 20px;
+      &,
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+      &:hover {
+        background: lighten($menu-bg-color, 10%);
+      }
+    }
+  }
+}
