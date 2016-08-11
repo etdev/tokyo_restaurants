@@ -1,4 +1,4 @@
-import homePickerTemplate from '../../../templates/home/homePicker.html';
+import homePickerTemplate from '../../../templates/home/homePicker.html.slim';
 
 function homePicker() {
     'use strict';

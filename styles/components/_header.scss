@@ -38,9 +38,11 @@ button.navbar-toggle {
   color: #FFF !important;
 }
 
-@media(min-width: 767px) {
+@include media(sm) {
   .navbar-brand {
     position: static !important;
     margin-left: 0 !important;
+    font-size: 1.5em !important;
+    width: 300px !important;
   }
 }
