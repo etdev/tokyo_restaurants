@@ -3,16 +3,13 @@ import angular from "angular";
 import Restangular from "restangular-umd";
 import _ from "underscore";
 import ngRoute from "angular-route";
-import jasnyBootstrap from "../build/jasny-bootstrap.js";
-//import slidebars from "../build/slidebars";
-//import slidebars from "../build/slidebars";
 
 //const baseUrl = 'http://trapi.etdev.me/v1/';
 const baseUrl = 'http://localhost:4545/v1/';
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ngRoute']);
 
 // define directives
-require("./directives/config")(tokyoRestaurants);
+require("./directives")(tokyoRestaurants);
 
 // define controllers
 const controllers = require("./controllers/config")(tokyoRestaurants);
