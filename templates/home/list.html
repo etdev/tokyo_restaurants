@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div id="wrapper">
     <div id="page-wrapper" canvas="container">
-      <section class="home-main">
+      <section class="home-main" ng-show="home.areas">
         <ng-include src="'templates/header.html'"></ng-include>
         <div class="logo">
           <img src="../../images/tr_logo_white_sushi_only.png"></img>
@@ -9,15 +9,15 @@
         <h2>Just good, cheap restaurants</h2>
         <p class="subtitle">In the Tokyo area</h2>
         <div class="tr-btn large primary round">
-          <a ng-href="/#/#tr-item-list"> Check Now </a>
+          <a ng-click="home.goToAreasList()"> Check Now </a>
         </div>
       </section>
 
       <tr-home-picker></tr-home-picker>
 
-      <section id="tr-item-list" class="tr-item-list">
+      <section id="areas-list" class="tr-item-list--areas">
         <ul>
-          <tr-area-list areas="areas" loading="loading"></tr-area-list>
+          <tr-area-list areas="home.areas" loading="loading"></tr-area-list>
         </ul>
       </section>
 

@@ -1,0 +1,7 @@
+.tr-item-list--areas {
+  @extend %tr-item-list;
+
+  li > a {
+    padding: $thumb-margin 10px;
+  }
+}

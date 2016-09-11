@@ -1,10 +1,26 @@
+/* base */
 @import "reset";
 @import "defaults";
 @import "variables";
 @import "mixins";
 
-@import "components";
-@import "pages";
+/* components */
+@import "components/buttons";
+@import "components/pagination";
+@import "components/header";
+@import "components/menu";
 
+/* pages */
+@import "pages/home";
+@import "pages/list_base";
+@import "pages/list_areas";
+@import "pages/list_restaurants";
+@import "pages/areas";
+@import "pages/restaurants";
+
+/* layout */
+@import "layout/footer";
+
+/* vendor */
 @import "vendor/jasny/jasny-bootstrap.css";
 @import "vendor/slidebars/slidebars.css";

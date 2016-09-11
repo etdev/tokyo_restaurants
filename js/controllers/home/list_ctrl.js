@@ -1,6 +1,13 @@
-export default function($scope, $stateParams, Restangular) {
-    console.log("IN HOME CONTROLLER");
+export default function($scope, $stateParams, Restangular, $location, $anchorScroll) {
+    const vm = this;
+    vm.goToAreasList = goToAreasList;
+
     Restangular.all("areas").getList().then(function(areas) {
-        $scope.areas = areas;
+        vm.areas = areas;
     });
+
+    function goToAreasList() {
+        $location.hash("areas-list");
+        $anchorScroll();
+    }
 }

@@ -4,4 +4,5 @@ export default function(tokyoRestaurants) {
   tokyoRestaurants.directive('trRestaurantList', require('../directives/restaurants/trRestaurantList'));
 
   tokyoRestaurants.directive('trPagination', require('../directives/shared/trPagination'));
+  tokyoRestaurants.directive('trFooterDefault', require('../directives/shared/trFooterDefault'));
 }

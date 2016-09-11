@@ -1,17 +1,21 @@
 $item-bg-color: #fff;
 $item-primary-text-color: #434343;
 $item-secondary-text-color: lighten($item-primary-text-color, 30%);
-$item-height: 70px;
+$item-height: 90px;
 $item-line-height: $item-height;
-$thumb-height: 60px;
-$thumb-width: 80px;
+$thumb-height: 80px;
+$thumb-width: 120px;
 $thumb-margin: ($item-height - $thumb-height) / 2;
 
-.tr-item-list {
+%tr-item-list {
   padding-left: 0;
   margin: 0;
   width: 100%;
   overflow: hidden;
+  ul {
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
 
   li {
     @include clearfix;
@@ -22,7 +26,9 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     border-bottom: 1px solid darken($item-bg-color, 3%);
     padding: 0;
     a {
-      height: $item-height;
+      @include clearfix;
+      //height: $item-height;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
       padding: $thumb-margin 15px;
       display: block;
       cursor: pointer;
@@ -45,30 +51,31 @@ $thumb-margin: ($item-height - $thumb-height) / 2;
     width: $thumb-width;
   }
 
-}
-
-.item-info {
-  color: $item-primary-text-color;
-  margin-top: $thumb-margin;
-  height: $item-height - $thumb-margin * 2;
-  display: inline-block;
-  float: left;
-  overflow: hidden;
-  max-width: 215px;
-
-  .main-title {
-    height: ($item-height - $thumb-margin * 2) * 3 / 5;
-    line-height: ($item-height - $thumb-margin * 2) * 3 / 5;
-    font-size: 1.1em;
+  .item-info {
+    color: $item-primary-text-color;
+    //height: $item-height - $thumb-margin * 2;
+    //display: inline-block;
+    //float: left;
     overflow: hidden;
+    max-width: 215px;
+
+    .main-title {
+      height: ($item-height - $thumb-margin * 2) * 2 / 5;
+      line-height: ($item-height - $thumb-margin * 2) * 2 / 5;
+      font-size: 1.1em;
+      overflow: hidden;
+    }
+
+    .sub-title {
+      color: $item-secondary-text-color;
+      height: ($item-height - $thumb-margin * 2) * 3 / 5;
+      line-height: 1.8em;
+      font-size: 0.9em;
+      overflow: hidden;
+    }
+
   }
 
-  .sub-title {
-    color: $item-secondary-text-color;
-    height: ($item-height - $thumb-margin * 2) * 2 / 5;
-    line-height: 1.8em;
-    font-size: 0.9em;
-    overflow: hidden;
-  }
-
 }
+
+

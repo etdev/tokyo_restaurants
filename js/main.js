@@ -4,8 +4,8 @@ import Restangular from "restangular-umd";
 import _ from "underscore";
 import uiRouter from "angular-ui-router";
 
-//const baseUrl = 'http://trapi.etdev.me/v1/';
-const baseUrl = 'http://localhost:4545/v1/';
+const baseUrl = 'http://trapi.etdev.me/v1/';
+//const baseUrl = 'http://localhost:4545/v1/';
 var tokyoRestaurants = angular.module('tokyoRestaurants', ['restangular', 'ui.router']);
 
 // define directives

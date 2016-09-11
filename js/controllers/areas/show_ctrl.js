@@ -13,8 +13,8 @@ export default function($stateParams, $window, Restangular) {
             vm.restaurants = restaurants;
             for (var r of restaurants) {
                 r.price_range_arr = new Array(r.price_range);
-                r.name = _.truncate(r.name, { "length": 12 });
-                r.genres = _.truncate(r.genres, { "length": 9 });
+                r.name = _.truncate(r.name, { "length": 15 });
+                r.genres = _.truncate(r.genres, { "length": 10 });
             }
         });
     });

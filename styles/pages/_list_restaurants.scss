@@ -1,0 +1,17 @@
+.tr-item-list--restaurants {
+  @extend %tr-item-list;
+
+  .item-info {
+
+    .main-title {
+      font-size: 1em;
+    }
+
+    overflow: hidden;
+    max-width: 60%;
+  }
+
+  .item-thumbnail {
+    width: 140px;
+  }
+}

@@ -1,10 +1,10 @@
-$pagination-height: 60px;
+$pagination-height: 50px;
 $pagination-border: #eee;
 
 tr-pagination {
   @include clearfix;
   display: block;
-  min-height: 100px;
+  min-height: 75px;
 }
 
 .pagination {
@@ -16,11 +16,9 @@ tr-pagination {
 
   .next-btn, .prev-btn {
     position: absolute;
-    min-width: 150px;
+    min-width: 120px;
     text-align: center;
     height: $pagination-height;
-    border: 1px solid $pagination-border;
-    border-radius: 3px;
     margin-bottom: 15px !important;
     span {
       line-height: $pagination-height;
@@ -28,7 +26,9 @@ tr-pagination {
     }
     a {
       display: block !important;
-      color: $primary-color !important;
+      color: #fff !important;
+      background: $primary-color;
+      border-radius: 3px;
     }
   }
 
