@@ -1,14 +1,12 @@
 <section class="pagination">
-  <div ng-if="prev">
-    <div class="prev-btn">
-      <i class="fa fa-prev"></i>
+  <div class="prev-btn" ng-if="pageData.prev">
+    <a ui-sref=".({page: pageData.page - 1})">
       <span>Back</span>
-    </div>
+    </a>
   </div>
-  <div ng-if="next">
-    <div class="next-btn">
-      <i class="fa fa-next"></i>
+  <div class="next-btn" ng-if="pageData.next">
+    <a ui-sref=".({page: pageData.page - 1})">
       <span>Next</span>
-    </div>
+    </a>
   </div>
 </section>

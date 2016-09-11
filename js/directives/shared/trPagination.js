@@ -1,18 +1,19 @@
 import paginationTemplate from "../../../templates/shared/pagination.html";
 
 function trPagination() {
-  'use strict';
-  return {
-    restrict: 'E',
-    scope: {
-      totalItems: '=',
-      perPage: '=',
-      currentPage: '=',
-      next: '=',
-      prev: '='
-    },
-    template: paginationTemplate
-  };
+    'use strict';
+
+    function link(scope, attrs, element) {
+    }
+
+    return {
+        restrict: 'E',
+        scope: {
+            pageData: '=',
+        },
+        template: paginationTemplate,
+        link: link
+    };
 }
 
 export default trPagination;

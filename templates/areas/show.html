@@ -1,21 +1,22 @@
-<section class="area-main" style="background-image: url('../images/overlay.png'), url({{ area.thumbnail }});">
+<section class="area-main" style="background-image: url('../images/overlay.png'), url({{ areaDetail.area.thumbnail }});">
   <ng-include src="'templates/header.html'"></ng-include>
-  <h2>Restaurants in {{ area.english_name }}</h2>
-  <p class="subtitle">Have a look at what {{ area.english_name }} has to offer</h2>
+  <h2>Restaurants in {{ areaDetail.area.english_name }}</h2>
+  <p class="subtitle">Have a look at what {{ areaDetail.area.english_name }} has to offer</h2>
 </section>
 
 <section class="tr-item-list">
   <ul>
-    <tr-restaurant-list restaurants="restaurants" loading="loading"></tr-restaurant-list>
+    <tr-restaurant-list restaurants="areaDetail.restaurants" loading="areaDetail.loading"></tr-restaurant-list>
   </ul>
 </section>
 
 </div>
 
 <tr-pagination
-    per-page="perPage"
-    total-items="totalItems"
-    prev="prev"
-    next="next"
-    current-page="currentPage">
+    page-data="areaDetail.pageData"
+    <!--per-page="areaDetail.pageData.perPage"-->
+    <!--total-items="areaDetail.pageData.totalItems"-->
+    <!--prev="areaDetail.pageData.prev"-->
+    <!--next="areaDetail.pageData.next"-->
+    <!--page="areaDetail.pageData.page">-->
 </tr-pagination>
